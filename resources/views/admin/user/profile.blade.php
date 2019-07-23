@@ -11,17 +11,9 @@
             <img class="card-img-top" src="{{ asset('storage/' . $user->userDetail->profile_picture) }}" alt="Immagine profilo di {{ $user->name }}">
           </a>
         @else
-          <p>Imposta la tua foto profilo</p>
-          <form action="{{ route('admin.profile_picture')}}" method="post" enctype="multipart/form-data">
-            @csrf
-            <div class="form-group">
-              <label for="profile_img">Immagine profile:</label>
-              <input class="form-control-file" type="file" name="profile_img">
-            </div>
-            <div class="form-group">
-              <input class="form-control" type="submit" value="Salva">
-            </div>
-          </form>
+          <a href="#" data-toggle="modal" data-target="#uploadImageForm">
+            Imposta la tua foto profilo
+          </a>
         @endif
         <p class="card-text">
           <ul>
